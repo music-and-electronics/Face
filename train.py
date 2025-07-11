@@ -93,7 +93,7 @@ transform = transforms.Compose([
     transforms.ToTensor(),
     transforms.Lambda(lambda x: x * 2 - 1) 
 ])
-cifar10_dataset = torchvision.datasets.CIFAR10(root='./data/cifar10', train=True, download=False, transform=transform)
+cifar10_dataset = torchvision.datasets.CIFAR10(root='./data/cifar10', train=True, download=True, transform=transform)
 dog_indices = [i for i, (_, label) in enumerate(cifar10_dataset) if label == 5]
 non_face_images = [cifar10_dataset[i][0][0].numpy() for i in dog_indices]
 
