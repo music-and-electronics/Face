@@ -22,7 +22,7 @@ def resize_image(image, size=(32, 32)):
 def get_4bit_quant():
     return FakeQuantize(
         observer=MovingAverageMinMaxObserver,
-        quant_min=-8, quant_max=7,
+        quant_min=-15, quant_max=15,
         dtype=torch.qint8,
         qscheme=torch.per_tensor_symmetric,
         reduce_range=False
